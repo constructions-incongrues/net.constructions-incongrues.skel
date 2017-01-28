@@ -18,16 +18,19 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "bento/ubuntu-14.04"
 
+  # Setup networking
   config.vm.network "private_network", type: "dhcp", nictype: "virtio"
 
-  # Enable provisioning with a shell script. Additional provisioners such as
-  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
-  # documentation for more information about their specific syntax and use.
+  # Copy Apache configuration
+  config.vm.provision "file", source: 'etc/templates/apache2-vhost.conf', destination: '/tmp/apache2-vhost.conf'
+
+  # Provision
   config.vm.provision "shell" do |s|
       s.path = "bin/provision-#{ci['type']}.sh"
       s.args = ["#{ci['name']}", "#{ci['profile']}"]
   end
 
+  # Setup synced folders
   config.vm.synced_folder ".", "/vagrant", type: "nfs"
 
   # Configure Virtualbox
