@@ -10,10 +10,11 @@ sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 ## Création d'un nouveau projet
 
-- ```bash
+```bash
 composer create-project --stability=dev --repository='{"type": "git", "url": "git@github.com:constructions-incongrues/ananas-build-toolkit.git"}' constructionsincongrues/net.constructions-incongrues.skel path
 ```
-- ```bash
+
+```bash
 cd path
 git init
 ```
