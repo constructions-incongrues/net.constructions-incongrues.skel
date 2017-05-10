@@ -18,3 +18,9 @@ cd path
 git init
 ```
 - Éditer le fichier `ci.yml`
+
+## Démarrage de la machine virtuelle
+
+```bash
+vagrant up
+```

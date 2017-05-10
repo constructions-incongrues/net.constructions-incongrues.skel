@@ -26,7 +26,7 @@ Vagrant.configure(2) do |config|
 
   # Provision
   config.vm.provision "shell" do |s|
-      s.path = "bin/provision-#{ci['type']}.sh"
+      s.path = "bin/provision-#{ENV['CI_PROVISION_TYPE'] || ci['type']}.sh"
       s.args = ["#{ci['name']}", "#{ci['profile']}"]
   end
 
