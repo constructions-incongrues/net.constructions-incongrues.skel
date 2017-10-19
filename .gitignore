@@ -1,3 +1,8 @@
 /vendor/
 /.vagrant
 *.bak
+/.kitchen/logs/
+/Dockerfile
+/Vagrantfile
+/application.conf
+/etc/profiles/docker/configuration.env
