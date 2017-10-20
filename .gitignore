@@ -3,6 +3,10 @@
 *.bak
 /.kitchen/logs/
 /Dockerfile
+/nginx.conf
 /Vagrantfile
 /application.conf
-/etc/profiles/docker/configuration.env
+/etc/profiles/demo/configuration.env
+/etc/profiles/demo/modules/blueprint/nginx_phpfpm/Dockerfile
+/etc/profiles/demo/modules/blueprint/nginx_phpfpm/Vagrantfile
+/etc/profiles/demo/modules/blueprint/nginx_phpfpm/nginx.conf
